@@ -1,6 +1,5 @@
 import {Fugaz_One, Open_Sans} from "next/font/google";
 import Link from "next/link";
-import Head from "./head";
 import { AuthProvider } from "@/context/AuthContext";
 import "./globals.css";
 import Logout from "@/components/Logout";
@@ -31,10 +30,10 @@ export default function RootLayout({ children }) {
   );
   return (
     <html lang="en">
-      <Head/>
       <AuthProvider>
         <body
           className={`${OpenSans.className} w-full max-w-[1000px] mx-auto text-sm sm:text-base min-h-screen flex flex-col text-slate-800`}
+          
         >
           {header}
           {children}

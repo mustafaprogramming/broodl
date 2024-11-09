@@ -1,5 +1,6 @@
-'use client'
-import { gradients , baseRating , demoData} from "@/utils";
+'use client';
+import { gradients , baseRating } from "@/utils";
+import { FaChevronCircleLeft, FaChevronCircleRight } from "react-icons/fa";
 import { Fugaz_One } from "next/font/google";
 import { useState } from "react";
 const fugaz= Fugaz_One({ subsets: ["latin"], weight: ['400'] })
@@ -57,11 +58,11 @@ export default function Calendar({demo , completeData , handleSetMood}){
   return (
     <div className="flex flex-col gap-2">
       <div className="grid grid-cols-3 gap-4">
-        <button onClick={()=>handelIncrementMonth(-1)} className="mr-auto text-indigo-400 text-lg sm:text-xl duration-200 hover:opacity-60"><i className="fa-solid fa-circle-chevron-left" aria-hidden={true}/></button>
+        <button onClick={()=>handelIncrementMonth(-1)} className="mr-auto text-indigo-400 text-lg sm:text-xl duration-200 hover:opacity-60"><FaChevronCircleLeft className="fa-solid fa-circle-chevron-left" /></button>
         <p className={`${fugaz.className} text-center capitalize text-gradient whitespace-nowrap`}>
           {selectedMonth} , {selectedYear}
         </p>
-        <button onClick={()=>handelIncrementMonth(1)} className="ml-auto text-indigo-400 text-lg sm:text-xl duration-200 hover:opacity-60"><i className="fa-solid fa-circle-chevron-right" aria-hidden={true}/></button>
+        <button onClick={()=>handelIncrementMonth(1)} className="ml-auto text-indigo-400 text-lg sm:text-xl duration-200 hover:opacity-60"><FaChevronCircleRight  className="fa-solid fa-circle-chevron-right" /></button>
       </div>
       <div className="flex flex-col overflow-hidden gap-1 py-4 sm:py-8 ">
         {/* 0,1,2,3,4 */}
